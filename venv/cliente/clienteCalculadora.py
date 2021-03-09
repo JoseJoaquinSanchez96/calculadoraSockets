@@ -11,27 +11,34 @@ print("EMPEZAMOS")
 CONEXION = (socket.gethostname(), 19001)
 ARCHIVO = "operacion.txt"
 
+#Creamos usuario y contraseña que nos permitirán acceder a la calculadora
 usuario = "los naranjos"
 contra = "morcilla1"
 
+#Pedimos usuario y contraseña por pantalla
 usuario = input("Introduce el usuario: ")
 contra = input("Introduce la contraseña: ")
 
+#Comprobamos si coincide, para seguir o no con el programa
 if(usuario.__eq__("los naranjos") & contra.__eq__("morcilla1")):
     print("Acceso permitido")
 
 else:
     print("Acceso denegado")
-    #cliente.close()
+    #Cerramos el cliente entero
     sys.exit()
 
+#Guardamos las operaciones en un array
 operaciones = ["suma", "resta", "multiplicacion", "division"]
 
+#Pedimos al usuario la operacion
 operacion = input("Introduce que operacion va a realizar ('suma', 'resta', 'multiplicacion' o 'division'): ")
 
+#Comprobamos que la operacion que deseamos realizar es la correcta
 while operacion not in operaciones:
     operacion = input("Introduce que operacion va a realizar ('suma', 'resta', 'multiplicacion' o 'division'): ")
 
+#Pedimos los numeros comprobando que son numeros
 while True:
     try:
         num1 = int(input("Introduce el primer numero: "))
@@ -120,5 +127,6 @@ else:
     print("Recibimos", recibido.decode("utf-8"))
     print("TERMINAMOS")
 
+#Cerramos el cliente
 cliente.close()
 print("FIN")

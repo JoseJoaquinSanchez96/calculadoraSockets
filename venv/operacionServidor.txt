@@ -1,3 +1,0 @@
-Operacion: division
-op1: 75
-op2: 5

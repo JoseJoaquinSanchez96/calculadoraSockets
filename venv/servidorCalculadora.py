@@ -7,6 +7,7 @@ print("EMPEZAMOS")
 #Creamos la lista con los datos de la conexión
 CONEXION = (socket.gethostname(), 19001)
 
+#Instanciamos el socket
 servidor = socket.socket()
 
 #Ponemos el servidor a escuchar
@@ -85,6 +86,7 @@ while True:
         f = open("respuestaServidor.txt", "w")
         f.write("Resultado: " + str(resultadoOperacion))
 
+        #Imprimimos la operacion, los numeros y el resultado
         print("Operacion: ", operar)
         print("Numero 1: ", operador1)
         print("Numero 2: ", operador2)
